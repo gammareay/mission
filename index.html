@@ -53,6 +53,20 @@
     clusters.addLayer(drewbands);
     map.addLayer(clusters);
     });
+  // JSON Data for search layer
+    const searchLayer = L.geoJSON(women-mission, {
+      onEachFeature: function(feature, layer) {
+        layer.bindPopup(feature.properties.name);
+      }
+    }).addTo(map);
+
+    //Control Search
+    const searchControl = new L.Control.Search ({
+      layer: searchLayer,
+      propertyName: 'name'
+    });
+
+    map.addControl(searchControl);
   </script>
 </body>
 </html>
