@@ -54,7 +54,7 @@
     map.addLayer(clusters);
     });
   // JSON Data for search layer
-    const searchLayer = L.geoJSON(women-mission, {
+    const searchLayer = L.geoJSON(women_mission, {
       onEachFeature: function(feature, layer) {
         layer.bindPopup(feature.properties.name);
       }
